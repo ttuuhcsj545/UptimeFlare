@@ -54,8 +54,8 @@ const workerConfig: WorkerConfig = {
     //   //checkLocationWorkerRoute: 'https://xxx.example.com',
     // },
     {
-      id: 'netlify图床',
-      name: 'UptimeKuma',
+      id: 'netlify',
+      name: 'netlify图床',
       method: 'HEAD',
       target: 'https://deft-choux-03813c.netlify.app/',
       statusPageLink: 'https://deft-choux-03813c.netlify.app/',
@@ -65,7 +65,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'blog',
-      name: '博客总入口（自动分流）',
+      name: '博客',
       method: 'HEAD',
       target: 'https://blog.lnova.top/',
       statusPageLink: 'https://blog.lnova.top/',
