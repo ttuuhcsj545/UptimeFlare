@@ -14,51 +14,19 @@ const pageConfig: PageConfig = {
     { link: 'https://blog.lnova.top/', label: '博客' },
   ],
 }
-
+group: {
+    '🌐 公开': ['netlify', 'blog', 'netlify1'],
+    '🔐 私密': ['cloud-disk','gtp'],
+  },
 const workerConfig: WorkerConfig = {
   // Define all your monitors here
   monitors: [
-    // HTTP 监控示例
-    // {
-    //   // `id` 应该是唯一的，如果 `id` 保持不变，历史记录将被保留
-    //   id: 'blog',
-    //   // `name` 用于状态页面和回调消息
-    //   name: '博客',
-    //   // `method` 应该是有效的 HTTP 方法
-    //   method: 'HEAD',
-    //   // `target` 是一个有效的 URL
-    //   target: 'https://blog.acofork.com/',
-    //   // [可选] `tooltip` 仅用于在状态页面显示提示信息
-    //   //tooltip: '这是此监控的提示信息',
-    //   // [可选] `statusPageLink` 仅用于状态页面的可点击链接
-    //   statusPageLink: 'https://blog.acofork.com/',
-    //   // [可选] `hideLatencyChart` 如果设置为 true，将隐藏状态页面的延迟图表
-    //   hideLatencyChart: false,
-    //   // [可选] `expectedCodes` 是可接受的 HTTP 响应代码数组，如果不指定，默认为 2xx
-    //   expectedCodes: [200],
-    //   // [可选] `timeout` 以毫秒为单位，如果不指定，默认为 10000
-    //   timeout: 10000,
-    //   // [可选] 要发送的头部信息
-    //   //headers: {
-    //   //  'User-Agent': 'Uptimeflare',
-    //   //  Authorization: 'Bearer YOUR_TOKEN_HERE',
-    //   //},
-    //   // [可选] 要发送的正文
-    //   //body: 'Hello, world!',
-    //   // [可选] 如果指定，响应必须包含关键字才被视为正常
-    //   //responseKeyword: 'success',
-    //   // [可选] 如果指定，响应必须不包含关键字才被视为正常
-    //   //responseForbiddenKeyword: 'bad gateway',
-    //   // [可选] 如果指定，检查将在您指定的区域运行，
-    //   // 设置此值之前请参考文档 https://github.com/lyc8503/UptimeFlare/wiki/Geo-specific-checks-setup
-    //   //checkLocationWorkerRoute: 'https://xxx.example.com',
-    // },
     {
       id: 'netlify',
-      name: 'netlify图床',
+      name: '图床前台（自定义域）',
       method: 'HEAD',
-      target: 'https://deft-choux-03813c.netlify.app/',
-      statusPageLink: 'https://deft-choux-03813c.netlify.app/',
+      target: 'https://img.lnova.top',
+      statusPageLink: 'https://img.lnova.top',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,
@@ -68,7 +36,27 @@ const workerConfig: WorkerConfig = {
       name: '博客',
       method: 'HEAD',
       target: 'https://blog.lnova.top/',
-      // statusPageLink: 'https://blog.lnova.top/',
+      statusPageLink: 'https://blog.lnova.top/',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
+    {
+      id: 'cloud-disk',
+      name: 'github图床后台api',
+      method: 'HEAD',
+      target: 'https://cloud.tianzhihao.dpdns.org/gh/repos/ttuuhcsj545/img/contents/?ref=master',
+      statusPageLink: 'https://cloud.tianzhihao.dpdns.org/gh/repos/ttuuhcsj545/img/contents/?ref=master',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
+    {
+      id: 'netlify1',
+      name: '图床前台（netlify）',
+      method: 'HEAD',
+      target: 'https://deft-choux-03813c.netlify.app/',
+      statusPageLink: 'https://deft-choux-03813c.netlify.app/',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,
