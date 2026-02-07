@@ -13,11 +13,12 @@ const pageConfig: PageConfig = {
     { link: 'https://github.com/ttuuhcsj545', label: 'GitHub' },
     { link: 'https://blog.lnova.top/', label: '博客' },
   ],
-}
-group: {
+  group: {
     '🌐 公开': ['netlify', 'blog', 'netlify1'],
     '🔐 私密': ['cloud-disk','gtp'],
   },
+}
+
 const workerConfig: WorkerConfig = {
   // Define all your monitors here
   monitors: [
