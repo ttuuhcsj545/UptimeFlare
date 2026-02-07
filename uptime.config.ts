@@ -16,6 +16,7 @@ const pageConfig: PageConfig = {
 }
 
 const workerConfig: WorkerConfig = {
+  passwordProtection: 'username:password',
   // Define all your monitors here
   monitors: [
     // HTTP 监控示例
@@ -81,7 +82,6 @@ const workerConfig: WorkerConfig = {
       statusPageLink: 'https://github.lnova.top/',
       hideLatencyChart: false,
       expectedCodes: [200],
-      hidden: true,
       timeout: 10000,
     }
   ],
