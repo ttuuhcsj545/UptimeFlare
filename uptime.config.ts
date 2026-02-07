@@ -81,6 +81,7 @@ const workerConfig: WorkerConfig = {
       statusPageLink: 'https://github.lnova.top/',
       hideLatencyChart: false,
       expectedCodes: [200],
+      hidden: true,
       timeout: 10000,
     }
   ],
